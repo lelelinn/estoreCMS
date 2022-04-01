@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "c8ed8071-550c-40cb-bd47-d8c6cf7663e0",
+		"name": "EStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"Token\", jsonData.token);\r",
+							"postman.setEnvironmentVariable(\"UserName\",\"LLL\")\r",
+							"postman.setEnvironmentVariable(\"image\",\"/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAB9AH0DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKK+Wv+Cj/7LHxh/a4s9N8M+EvjFcfB/wCFws55/Ftx4dt2HivWmGClrbXbHZaQlQd0ihnJ+XaVJBxr1fZwcrf0lfX7vN9k2aU4KTs3/Xl/Vu7SPqWivza/4NPY/J/4I0+ElyzbfEWuDcxyT/p0nJr3L9qr/giv8Dv26fi5q3iz4yweO/iLHfCAWGg3/jDUbTRPD/lRCMmztbSWEIZCC7ly5LuxBAIA6a9OVOSUdbpPtuk7de/lsZUpKXNzaWcl32k1+l/8z6zor8q/+Def+3Pgt+1r+1/8AtH8Va/4r+C/wX8T2dj4P/tW5a7OiPL9p8+xilY/djMQUoOA0bNhWkbd4T8Iv2L/ANjf9rf/AIKVftm3f7T7+C5/Eul/ElLTQ113x3c6BP8AZWtVyI44ryDzF3KACVbGMA9qi6lOCp6xlT9or6OzcElbXX3++y8xy9xTU94z5Hba9pO99NPdttu7H7lUV4R+zB+yd8Kf+CbH7MetaV8EPA2oReFENx4kTRNG1ObVbrV7gwrkW8l7ctueRYo1VTKqE45GSa5D4ff8Fifgp8Qv+CeWs/tLpqupaT4B8ORXA1ay1K3jh1jTLyF/LOny24kZRds7Rqke8hjLGQ2GBoqShDmd9IpN+V/v0vpf02bsFOM5cunxNpef/Btr99r2bPqaivn7x74x+Kf7YP7EGj678GLl/gv4u8e2trd21z450ZLnUPDllMdzytZwyyRG78ohkjkkKqWAk2kFR8C/8EOvgJe/sx/8Fr/2yvBWpeN/FvxI1LSNE8MteeJPEt19o1LVJ5bfzpHduy75GCJk7ECLltuTUISeJeGmuVpS++Ku9Pwv32vZ2UpR+r/WIO6937pSUV+d7ffa6P17orwz9tT/AIJ9+Cf2/LTw/pnxD1Xx1J4T0U3Ju/DWjeI7nSNM8Q+cqKPtwtmSWYRhDsAkUDzHyGyMfm94P/Zb0D/gkv8A8HCPwL+GH7Od9r/hz4e/GPwxqN9408DNq11qWnQpbQ3JhvsXEkjqzPD8rsxKmN1U7ZClTQ9+rGlPRyvbrtFy12srReqv5lVbRoyqx15Vd/elp3eq7H7KUV+Rn/BY34KfA/8AaM/4Ldfs/wDhT9omXQh8NJPhvrdy6az4il0O0+1rcAxf6RHPCwY7fuh/m28g4r68/wCCcv8AwTC/ZL/ZI8QX3xF/Zw8N6HbXGu2DaRcaxpPi6/122ubfzEkaMGa6niB3xocqA3GM4JFLDv2lNVZaJ822vwylDXbdx+SfUVZ8lR047rl303jGTtvspfNrofW9FFFMArO8X/8AIp6p/wBekv8A6Aa0a+df24v+CT/wB/4KQ614e1D40eA28Z3XhWCa30pv7d1LThaJMyNIAtpcRKxYonLAn5RzWGJpyqU3SX2k16XT+/8AD1NKUlGXO+n+f9dz5m/4NQ/+UN3hT/sY9c/9L5K7v/gp3/wUN8Z6Z8U9J/Zi/ZsgtPEH7Rnjy0aa7v3Hmaf8M9KIUSatfsAQj7XHkxsDlihKtuiim6f9mD/ggj+yb+xn8cdE+JHw2+FP/CN+NPDhmOnaj/wk+sXn2fzYZIJP3VxdyRNmOV1+ZDjdkYIBqH9pL/ggD+yR+138btf+I3xD+E3/AAkPjLxPLHNqeof8JRrNp9pdIkiU+VBdpEuEjQfKg6Z6kmunEtVZwv8ACklJbX5YpJJro7Xezt7q35lnSbpucl8TcmutnJt3t/dvp0b1asuV+kf8E1v+CefhP/gmj+zHYfD7w1dXet381xJqviHxDfAfbfEepzYM93Mck8kBVUliqKoLMQWajrf7D/7Jn7TcviLxrffCn4AePJ9Uubj+2fET+HtK1GaW4jzHOZbvYzCRChDEuGVlOcHNZf7Fv/BGP9mv/gnl8Ur3xr8Hvhv/AMIh4m1DTZNHuLz/AISDVNQ8y1eSKVo/LurmVBl4YzuChvlxnBIPIfGD/g3k/Y1+O/xTv/GfiT4HaJN4g1S6N7dy2OralptvcTM25na3trmOAlmyW+T5iTnOTU1/3jTet1bbbokkt42S0922iSshUVyRcb9fW/dt97t663+Z8+/8G2kdj4Z+KH7XHhf4aatcax+zX4W+ICWnw8lN7LeWdrIUle+gtJXdt8C7rYhgTvDK5LFyx+Df2m38OeJP26fG37SOjeGtZ1L9gSz+MGkxePrKwvmGneJtbt45IpddjtQhWaxS7mXzApIuGYd3/df0Bad+yn8PfD/7PF38KNG8L2Hhr4fXmnTaU+j6A0mjxpbzKyyrG9q0ckbMGbLoyvlid2Tms/w3+xT8LPCP7Jw+Bun+C9Kg+FA0iTQj4dJkeB7SQMJEZ2YyM7FmYyFzIXJfdu+am5SjVhWhrKnGCjf7Tjy3cn58itvaT5t4Ru7RnCdOeiqSk5W+ypX0j5+9vpomtpu3ovhvxBp/izw7YappN3a6hpepW0d1Z3VtIJILmGRQ0ciMOGVlIII4IIr82P8Agnd/ysYft1/9gfwp/wCkSV9b+Lv+CYXwQ8e/sW6f+zzrHg+6v/g/pSwpa6DL4g1PMSQzedEn2r7R9pKI+CqmUgBVXG1QB8/R/wDBrr+wrFIrL8DcMpyD/wAJn4g4P/gdTp8scZ7b7KU4rvaStd9LrtfXuhavC+xl8T5W+ycZJ6eTt8vO2vu3/BSj/gox4W/4JxfAuPxDqdleeKfGXiO6XR/Bng7TAZNU8XapIVSK2gjUM23c6l3CnaCAAzsiP5R/wSt/4J0eMPhV8RPFv7Rvx/1C08QftI/FqBE1KO1AOneCdNGDFo9ly3yoFjEjhiGMagFsNLL6r+23/wAEnvgB/wAFGbzwzcfGXwD/AMJjL4PgmttIb+3NR0/7JHMYzIMWtxEHyYo+X3EbeMZOfKPhX/wbgfsYfBP4neHfGXhj4Nf2Z4k8Kalb6xpV5/wluuzfZbq3lWWKTZJesjbXRTtdSpxggjilhrRm5VN22rrW0fJaavXmd9vdTSu5Fa8qcYR6atd5dLvtF7ab+81flUfffjH+zt+z/wDtW/FMab8QPBHwg+JHjTwvYL/oXiDSNO1jUtKtJ2LKTFMjyRRuyMVOACQ2O9fnR4J+Enw//Zg/4ObPBHhP9me20jw5pGteBdRu/jB4X8Nv5ejaeI0kFnLJbRt5NvP5r237tVUKHVtoMzFvuf8AbO/4I/fs2/8ABQfxdaeIPi78LNI8Va/ZQC1j1OO9vNMvHiUkrHJNaTRPIq5O0OWC5OMZrs/2Pv2APg1+wJ4PuND+EHw+0HwRZXm37XJaK815fbc7fPuZWeebbuOPMdsZOMZpYf3KqqvS3PouvMmtdtNeZqzvJLXqOv71OVNa83Lq+lmnpvd6WT0sn8n7DRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//2Q==\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\":\"LLL\",\r\n    \"Password\":\"password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/API/estore/Authenticate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"API",
+						"estore",
+						"Authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EStore PromoPurchase History",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkxMTCIsIm5iZiI6MTY0ODc3MTY2OSwiZXhwIjoxNjQ4ODU4MDY5LCJpYXQiOjE2NDg3NzE2Njl9.NvVDAyjAl97e-UGUl2QizATQB8S7j4a6LTBymjsl1XQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTlpBIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNkNDQ0NTIyLTM0YjEtNGRmMS04ZTVkLWMyODM3NzdlOTk4ZSIsImV4cCI6MTY0ODA0MzI3MSwiaXNzIjoid3d3LmpveWRpcGthbmppbGFsLm5ldCIsImF1ZCI6Ind3dy5qb3lkaXBrYW5qaWxhbC5uZXQifQ.Msi0zwZ8sMoGu9FCccGCp96S51hjf6nFXkrxt_1JV00",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\":\"LLL\",\r\n    \"promoType\":\"all\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/API/Estore/PromoPurchaseHistory",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"API",
+						"Estore",
+						"PromoPurchaseHistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EStore ItemPurchase History",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkxMTCIsIm5iZiI6MTY0ODc3MTY2OSwiZXhwIjoxNjQ4ODU4MDY5LCJpYXQiOjE2NDg3NzE2Njl9.NvVDAyjAl97e-UGUl2QizATQB8S7j4a6LTBymjsl1XQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTlpBIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNkNDQ0NTIyLTM0YjEtNGRmMS04ZTVkLWMyODM3NzdlOTk4ZSIsImV4cCI6MTY0ODA0MzI3MSwiaXNzIjoid3d3LmpveWRpcGthbmppbGFsLm5ldCIsImF1ZCI6Ind3dy5qb3lkaXBrYW5qaWxhbC5uZXQifQ.Msi0zwZ8sMoGu9FCccGCp96S51hjf6nFXkrxt_1JV00",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\":\"{{UserName}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/api/Estore/GetItemPurchaseHistory",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"api",
+						"Estore",
+						"GetItemPurchaseHistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Estore Buy EVoucher",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkxMTCIsIm5iZiI6MTY0ODc3MTY2OSwiZXhwIjoxNjQ4ODU4MDY5LCJpYXQiOjE2NDg3NzE2Njl9.NvVDAyjAl97e-UGUl2QizATQB8S7j4a6LTBymjsl1XQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTlpBIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNkNDQ0NTIyLTM0YjEtNGRmMS04ZTVkLWMyODM3NzdlOTk4ZSIsImV4cCI6MTY0ODA0MzI3MSwiaXNzIjoid3d3LmpveWRpcGthbmppbGFsLm5ldCIsImF1ZCI6Ind3dy5qb3lkaXBrYW5qaWxhbC5uZXQifQ.Msi0zwZ8sMoGu9FCccGCp96S51hjf6nFXkrxt_1JV00",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\":\"{{UserName}}\",\r\n    \"VoucherID\":3,\r\n    \"Quantity\":1,\r\n    \"PaymentType\":\"cash\",\r\n    \"CardNumber\":\"20404061606442\",\r\n    \"Name\":\"Chun\",\r\n    \"PhoneNumber\":\"09791231236\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/API/Estore/BuyEVoucher",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"API",
+						"Estore",
+						"BuyEVoucher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EStore Voucher List",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTlpBIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNkNDQ0NTIyLTM0YjEtNGRmMS04ZTVkLWMyODM3NzdlOTk4ZSIsImV4cCI6MTY0ODA0MzI3MSwiaXNzIjoid3d3LmpveWRpcGthbmppbGFsLm5ldCIsImF1ZCI6Ind3dy5qb3lkaXBrYW5qaWxhbC5uZXQifQ.Msi0zwZ8sMoGu9FCccGCp96S51hjf6nFXkrxt_1JV00",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\":{{UserName}}\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/API/EStore/GetVoucherList",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"API",
+						"EStore",
+						"GetVoucherList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EStore Item List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkxMTCIsIm5iZiI6MTY0ODc3MTY2OSwiZXhwIjoxNjQ4ODU4MDY5LCJpYXQiOjE2NDg3NzE2Njl9.NvVDAyjAl97e-UGUl2QizATQB8S7j4a6LTBymjsl1XQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTlpBIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNkNDQ0NTIyLTM0YjEtNGRmMS04ZTVkLWMyODM3NzdlOTk4ZSIsImV4cCI6MTY0ODA0MzI3MSwiaXNzIjoid3d3LmpveWRpcGthbmppbGFsLm5ldCIsImF1ZCI6Ind3dy5qb3lkaXBrYW5qaWxhbC5uZXQifQ.Msi0zwZ8sMoGu9FCccGCp96S51hjf6nFXkrxt_1JV00",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\":\"{{UserName}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/API/Estore/GetItems",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"API",
+						"Estore",
+						"GetItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EStore Buy Items",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTlpBIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNkNDQ0NTIyLTM0YjEtNGRmMS04ZTVkLWMyODM3NzdlOTk4ZSIsImV4cCI6MTY0ODA0MzI3MSwiaXNzIjoid3d3LmpveWRpcGthbmppbGFsLm5ldCIsImF1ZCI6Ind3dy5qb3lkaXBrYW5qaWxhbC5uZXQifQ.Msi0zwZ8sMoGu9FCccGCp96S51hjf6nFXkrxt_1JV00",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\":\"{{UserName}}\",\r\n    \"Name\":\"Chun\",\r\n    \"PhoneNumber\":\"09123456789\",\r\n    \"ItemID\":2,\r\n    \"qty\":3,\r\n    \"cardNumber\":\"77781146147814\",\r\n    \"promoCode\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/API/Estore/BuyItems",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"API",
+						"Estore",
+						"BuyItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EStore Payment Method",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "\"{{Token}}\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTlpBIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNkNDQ0NTIyLTM0YjEtNGRmMS04ZTVkLWMyODM3NzdlOTk4ZSIsImV4cCI6MTY0ODA0MzI3MSwiaXNzIjoid3d3LmpveWRpcGthbmppbGFsLm5ldCIsImF1ZCI6Ind3dy5qb3lkaXBrYW5qaWxhbC5uZXQifQ.Msi0zwZ8sMoGu9FCccGCp96S51hjf6nFXkrxt_1JV00",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\":\"{{UserName}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/api/Estore/GetPaymentMethods",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"api",
+						"Estore",
+						"GetPaymentMethods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CMS_CreateVoucher",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkxMTCIsIm5iZiI6MTY0ODc3MTY2OSwiZXhwIjoxNjQ4ODU4MDY5LCJpYXQiOjE2NDg3NzE2Njl9.NvVDAyjAl97e-UGUl2QizATQB8S7j4a6LTBymjsl1XQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"{{userName}}\",\r\n  \"title\": \"Voucher one\",\r\n  \"description\": \"Get Discount with this voucher\",\r\n  \"expiry_Date\": \"2022-12-31T23:59:59\",\r\n  \"image\": \"{{image}}\",\r\n  \"amount\": 1000,\r\n  \"payment_Method\": \"visa\",\r\n  \"payment_Method_Discount\": 10,\r\n  \"quantity\": 1000,\r\n  \"Buy_Type\": \"myself\", \r\n  \"maximumVoucherPerUser\": 5,\r\n  \"price\": 8000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/API/CMS/CreateVoucher",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"API",
+						"CMS",
+						"CreateVoucher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CMS_UpdateVoucher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"UserName\": \"{{UserName}}\",\r\n  \"VoucherID\":3,\r\n  \"title\": \"Good Choice\",\r\n  \"description\": \"Get Discount with this voucher\",\r\n  \"expiry_Date\": \"2022-12-31T23:59:59\",\r\n  \"image\": \"\",\r\n  \"imageurl\":\"Images/Vouchers/Voucher_637836426360684745.jpg\",\r\n  \"amount\": 100000,\r\n  \"payment_Method\": \"visa\",\r\n  \"payment_Method_Discount\": 10,\r\n  \"quantity\": 100,\r\n  \"buy_Type\": \"gift\", \r\n  \"createdDate\": \"0001-01-01T00:00:00\",\r\n  \"maximumVoucherPerUser\": 5,\r\n  \"price\": 9000,\r\n  \"IsActive\":1,\r\n  \"CreatedDate\":\"2022-03-23T00:00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/api/CMS/UpdateVoucher",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"api",
+						"CMS",
+						"UpdateVoucher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CMS_VoucherList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkxMTCIsIm5iZiI6MTY0ODc3MTY2OSwiZXhwIjoxNjQ4ODU4MDY5LCJpYXQiOjE2NDg3NzE2Njl9.NvVDAyjAl97e-UGUl2QizATQB8S7j4a6LTBymjsl1XQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"{{UserName}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44369/API/CMS/GetVouchers",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"API",
+						"CMS",
+						"GetVouchers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
